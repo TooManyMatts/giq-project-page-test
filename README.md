@@ -2,23 +2,22 @@
 
 <a href="https://arxiv.org/pdf/2412.19920"><img src="https://img.shields.io/badge/Arxiv-2408.00653-B31B1B.svg"></a>
 
-<div align="center">
-  <img src="demo_files/teaser.gif" alt="Teaser">
-</div>
 
 <br>
 
-This is the official codebase for **Stable Fast 3D**, a state-of-the-art open-source model for **fast** feedforward 3D mesh reconstruction from a single image.
+This repository contains the official codebase for **G-IQ**, a comprehensive benchmark designed to assess the geometric reasoning capabilities of vision and vision-language foundation models on a diverse collection of polyhedra exhibiting rich geometric properties—convexity, symmetry, and varying levels of complexity.
 
 <br>
+<p align="center">
+    <img width="450" src="demo_files/sample2.png"/>
+</p>
+
+
 
 <p align="center">
     <img width="450" src="demo_files/comp.gif"/>
 </p>
 
-<p align="center">
-    <img width="450" src="demo_files/scatterplot.jpg"/>
-</p>
 
 Stable Fast 3D is based on [TripoSR](https://github.com/VAST-AI-Research/TripoSR) but introduces several new key techniques. For one, we explicitly optimize our model to produce good meshes without artifacts alongside textures with UV unwrapping. We also delight the color and predict material parameters so the assets can be easily integrated into a game. We achieve all of this while still maintaining the fast inference speeds of TripoSR.
 
