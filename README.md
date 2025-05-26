@@ -15,15 +15,28 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
 
 ## Table of Contents
 
-1. [Data Files (`json`, `txt`)](#data-files-json-txt)
-2. [Download Links to Data](#download-links-to-data)
+
+1. [Download Links to Renderings and Meshes](#download-links-to-renderings-and-meshes)
+2. [JSON Metadata Files Describing Polyhedra and Splits](#json-metadata-files-describing-polyhedra-and-splits)
 3. [Results: Monocular 3D Reconstruction](#results-monocular-3d-reconstruction)
 4. [Citation](#citation)
 5. [License](#license)
 
+
 ---
 
-## Data Files (`json`, `txt`)
+## Download Links to Renderings and Meshes
+
+- **Rendered images** (256×256 PNGs, 20 views per shape):  
+  `<dummy link to renderings archive>`
+
+- **3D meshes** (OBJ/PLY format):  
+  `<dummy link to mesh archive>`
+
+---
+
+## JSON Metadata Files Describing Polyhedra and Splits
+
 
 ### `shapes.json`
 
@@ -41,16 +54,20 @@ A JSON file describing each polyhedron in G-IQ:
 ```
 
 - **Shape IDs**  
-  - `cid_x` – Catalan solid number *x*  
-  - `jid_x` – Johnson solid number *x*  
-  - `wid_x` – Wenninger model ID number *x*  
+  - cid_x – Catalan solid number *k*  
+  - jid_x – Johnson solid number *k*  
+  - wid_x – Wenninger solid number *k*  
 
 - **Groups** (one of):  
-  `platonic`, `archimedean`, `catalan`, `johnson`, `stellations`,  
-  `kepler-poinsot`, `compounds`, `uniform non-convex`
+  platonic, archimedean, catalan, johnson, stellations,  
+  kepler-poinsot, compounds, uniform non-convex
 
-- **Symmetries** (one of):  
-  `central point reflection`, `5-fold rotation`, `4-fold rotation`
+- **Symmetries**:  
+  - `central point reflection`
+  - `5-fold rotation`
+  - `4-fold rotation`
+  - `None` *(indicates none of the above three specific symmetries; other symmetries might still be present)*
+
 
 - **Name**  
   The canonical polyhedron name (e.g., `"cube"`, `"hexahedron"`).
@@ -67,32 +84,49 @@ A JSON file describing each polyhedron in G-IQ:
 }
 ```
 
-### Hard Split (`hard_split.txt`)
+### Hard Split (`hard_examples.json`)
 
-Defines challenging “hard” pairs for the Mental Rotation Test. Each line is a comma-separated pair. Sections:
+Defines challenging "hard" pairs for the Mental Rotation Test in a structured JSON format, divided into negative and positive pairs.
 
+**Structure**:
+
+```json
+{
+  "negative": [
+    ["shape_id_1", "shape_id_2"],
+    ...
+  ],
+  "positive": [
+    ["shape_id_x", "shape_id_x"],
+    ...
+  ]
+}
 ```
-# negative pairs
-cid 7, wid 5
-cid 13, wid 9
-cid 7, cid 13
 
-# positive pairs
-cid 7, cid 7
-…
+- **Negative pairs** contain different shapes that are visually similar and difficult to differentiate.
+- **Positive pairs** contain identical shapes.
+
+**Example**:
+
+```json
+{
+  "negative": [
+    ["wid 89", "wid 5"],
+    ["cid 7", "wid 9"]
+  ],
+  "positive": [
+    ["wid 5", "wid 5"],
+    ["cid 7", "cid 7"]
+  ]
+}
 ```
+
+
+
 
 ---
 
-## Download Links to Data
 
-- **Rendered images** (256×256 PNGs, 20 views per shape):  
-  `<dummy link to renderings archive>`
-
-- **3D meshes** (OBJ/PLY format):  
-  `<dummy link to mesh archive>`
-
----
 
 ## Results: Monocular 3D Reconstruction
 
