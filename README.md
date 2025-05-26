@@ -53,14 +53,15 @@ A JSON file describing each polyhedron in G-IQ:
 }
 ```
 
+
 - **Shape IDs**  
-  - cid_x – Catalan solid number *k*  
-  - jid_x – Johnson solid number *k*  
-  - wid_x – Wenninger solid number *k*  
+  - `cid_x` – Catalan solid number *x*  
+  - `jid_x` – Johnson solid number *x*  
+  - `wid_x` – Wenninger model ID number *x*  
 
 - **Groups** (one of):  
-  platonic, archimedean, catalan, johnson, stellations,  
-  kepler-poinsot, compounds, uniform non-convex
+  `platonic`, `archimedean`, `catalan`, `johnson`, `stellations`,  
+  `kepler-poinsot`, `compounds`, `uniform non-convex`
 
 - **Symmetries**:  
   - `central point reflection`
