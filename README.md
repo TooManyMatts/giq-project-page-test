@@ -15,7 +15,7 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
 
 
 <p align="center">
-    <img width="450" src="demo_files/comp.gif"/>
+    <img width="450" src="demo_files/m3dr.gif"/>
 </p>
 
 
