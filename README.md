@@ -9,7 +9,7 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
 
 <br>
 <p align="center">
-    <img width="450" src="demo_files/sample2.png"/>
+    <img width="450" src="demo_files/sample_2.png"/>
 </p>
 
 
