@@ -30,8 +30,8 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
 - **Rendered images** (256×256 PNGs, 20 views per shape):  
   `<dummy link to renderings archive>`
 
-- **3D meshes** (OBJ/PLY format):  
-  `<dummy link to mesh archive>`
+- **3D meshes** (OBJ format, organized as `3d_meshes/<group>/<shape_id>.obj`):  
+  [**Download Meshes (22.8 MB)**](https://rice.box.com/s/l131lxf8c2o1bco8jwlmpcvxg41c84hg)
 
 ---
 
