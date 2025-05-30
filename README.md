@@ -31,7 +31,7 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
   `<dummy link to renderings archive>`
 
 - **3D meshes** (OBJ format, organized as `3d_meshes/<group>/<shape_id>.obj`):  
-  [**Download Meshes (22.8 MB)**](https://rice.box.com/s/l131lxf8c2o1bco8jwlmpcvxg41c84hg)
+  [**Download Meshes (22.8 MB)**](https://www.dropbox.com/scl/fi/drc702i5xnieh9r51juld/3d_meshes.zip?rlkey=a6l66ybipeok5b51zqvqrkkzw&st=8jr8ml5j&dl=0)
 
 ---
 
