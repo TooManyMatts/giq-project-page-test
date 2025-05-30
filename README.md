@@ -1,7 +1,6 @@
-# GIQ:  Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
+# GIQ: Benchmarking 3D Geometric Reasoning of Vision Foundation Models with Simulated and Real Polyhedra
 
 <a href="https://arxiv.org/pdf/2412.19920"><img src="https://img.shields.io/badge/Arxiv-2408.00653-B31B1B.svg"></a>
-
 
 <br>
 
@@ -15,13 +14,12 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
 
 ## Table of Contents
 
-
 1. [Download Links to Renderings and Meshes](#download-links-to-renderings-and-meshes)
 2. [JSON Metadata Files Describing Polyhedra and Splits](#json-metadata-files-describing-polyhedra-and-splits)
-3. [Results: Monocular 3D Reconstruction](#results-monocular-3d-reconstruction)
-4. [Citation](#citation)
-5. [License](#license)
-
+3. [Featurizers Used in Experiments](#featurizers-used-in-experiments)
+4. [Results: Monocular 3D Reconstruction](#results-monocular-3d-reconstruction)
+5. [Citation](#citation)
+6. [License](#license)
 
 ---
 
@@ -37,10 +35,9 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
 
 ## JSON Metadata Files Describing Polyhedra and Splits
 
-
 ### `shapes.json`
 
-A JSON file describing each polyhedron in G-IQ:
+Describes each polyhedron in G-IQ:
 
 ```json
 {
@@ -53,27 +50,12 @@ A JSON file describing each polyhedron in G-IQ:
 }
 ```
 
+- **Shape IDs**: `cid_x`, `jid_x`, `wid_x`  
+- **Groups**: `platonic`, `archimedean`, `catalan`, `johnson`, `stellations`, `kepler-poinsot`, `compounds`, `uniform non-convex`
+- **Symmetries**: `central point reflection`, `5-fold rotation`, `4-fold rotation`, `None`
+- **Name**: Canonical polyhedron name
 
-- **Shape IDs**  
-  - `cid_x` – Catalan solid number *x*  
-  - `jid_x` – Johnson solid number *x*  
-  - `wid_x` – Wenninger model ID number *x*  
-
-- **Groups** (one of):  
-  `platonic`, `archimedean`, `catalan`, `johnson`, `stellations`,  
-  `kepler-poinsot`, `compounds`, `uniform non-convex`
-
-- **Symmetries**:  
-  - `central point reflection`
-  - `5-fold rotation`
-  - `4-fold rotation`
-  - `None` *(indicates none of the above three specific symmetries; other symmetries might still be present)*
-
-
-- **Name**  
-  The canonical polyhedron name (e.g., `"cube"`, `"hexahedron"`).
-
-**Example entry**:
+**Example**:
 
 ```json
 {
@@ -87,47 +69,46 @@ A JSON file describing each polyhedron in G-IQ:
 
 ### Hard Split (`hard_examples.json`)
 
-Defines challenging "hard" pairs for the Mental Rotation Test in a structured JSON format, divided into negative and positive pairs.
-
-**Structure**:
+Defines challenging pairs for the Mental Rotation Test:
 
 ```json
 {
-  "negative": [
-    ["shape_id_1", "shape_id_2"],
-    ...
-  ],
-  "positive": [
-    ["shape_id_x", "shape_id_x"],
-    ...
-  ]
+  "negative": [["wid 89", "wid 5"], ["cid 7", "wid 9"]],
+  "positive": [["wid 5", "wid 5"], ["cid 7", "cid 7"]]
 }
 ```
-
-- **Negative pairs** contain different shapes that are visually similar and difficult to differentiate.
-- **Positive pairs** contain identical shapes.
-
-**Example**:
-
-```json
-{
-  "negative": [
-    ["wid 89", "wid 5"],
-    ["cid 7", "wid 9"]
-  ],
-  "positive": [
-    ["wid 5", "wid 5"],
-    ["cid 7", "cid 7"]
-  ]
-}
-```
-
-
-
 
 ---
 
+## Featurizers Used in Experiments
 
+The `featurizers/` folder contains Python classes implementing the featurizers:
+
+- `clip_featurizer.py`
+- `convnext_featurizer.py`
+- `deit_iii_featurizer.py`
+- `dino_featurizer.py`
+- `dinov2_featurizer.py`
+- `dreamsim_featurizer.py`
+- `mae_featurizer.py`
+- `sam_featurizer.py`
+- `siglip_featurizer.py`
+
+Each featurizer class provides methods to load the corresponding pretrained model and encode images into feature embeddings.
+
+**Example**:
+
+```python
+from featurizers.featurizer_loader import load_featurizer
+
+model = load_featurizer('dinov2')
+
+img = Image.open(img_path).convert('RGB')
+img_prep = model.preprocess_image(img)
+emb = model.encode_image(img_prep)
+```
+
+---
 
 ## Results: Monocular 3D Reconstruction
 
@@ -140,8 +121,6 @@ Below are representative results of monocular 3D reconstruction using state-of-t
 
 ---
 
-
-
 ## Citation
 ```BibTeX
 @article{michalkiewicz2024not,
@@ -150,4 +129,3 @@ Below are representative results of monocular 3D reconstruction using state-of-t
   journal={arXiv preprint arXiv:2412.19920},
   year={2024}
 }
-```
