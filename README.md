@@ -23,13 +23,15 @@ This repository contains the official codebase for **G-IQ**, a comprehensive ben
 
 ---
 
-## Download Links to Renderings and Meshes
-
-- **Rendered images** (JPG, 6000×4000 resolution):
+## Download Links to Renderings and Meshes:  
+- **3D meshes** (OBJ format, organized as `3d_meshes/<group>/<shape_id>.obj`):
+  
+  [**Download Meshes (22.8 MB)**](https://drive.google.com/file/d/1i_6up_4Cc24EaIhnKkhMboaDw-1tdJdC/view?usp=drive_link)
+- **Rendered images** (JPG format):
+  
   [**Download Renderings (90 GB)**](https://drive.google.com/file/d/1kCXKpisGIcz7qgKpdMFqzNji7CnNIX9w/view?usp=drive_link)
 
-- **3D meshes** (OBJ format, organized as `3d_meshes/<group>/<shape_id>.obj`):  
-  [**Download Meshes (22.8 MB)**](https://www.dropbox.com/scl/fi/drc702i5xnieh9r51juld/3d_meshes.zip?rlkey=a6l66ybipeok5b51zqvqrkkzw&st=8jr8ml5j&dl=0)
+
 
 ---
 
