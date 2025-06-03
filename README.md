@@ -122,7 +122,7 @@ emb = model.encode_image(img_prep)
 Below are representative results of monocular 3D reconstruction using state-of-the-art methods (Shap-E, Stable Fast 3D, OpenLRM):
 
 <p align="center">
-  <img width="600" src="demo_files/grid_comparison.gif" alt="Monocular 3D Reconstruction Results"/>
+  <img width="600" src="demo_files/grid_comparison_compressed.gif" alt="Monocular 3D Reconstruction Results"/>
   <!-- Replace with actual GIF showcasing reconstruction results -->
 </p>
 
