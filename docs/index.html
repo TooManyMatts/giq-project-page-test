@@ -223,7 +223,7 @@ Moreover, advanced vision-language assistants exhibit remarkably low accuracy on
   const img = document.getElementById('slider-image');
 
   slider.oninput = function() {
-    let frameNumber = this.value.padStart(2, '0');
+    let frameNumber = this.value.padStart(3, '0');
     img.src = `./static/frames/frame_${frameNumber}.png`;
   };
 </script>
