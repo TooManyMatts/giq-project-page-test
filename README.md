@@ -126,6 +126,10 @@ Below are representative results of monocular 3D reconstruction using state-of-t
   <!-- Replace with actual GIF showcasing reconstruction results -->
 </p>
 
+<video width="600" autoplay loop muted playsinline>
+  <source src="demo_files/grid_comparison.mp4" type="video/mp4">
+</video>
+
 ---
 
 ## Citation
