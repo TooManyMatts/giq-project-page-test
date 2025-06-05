@@ -8,21 +8,6 @@
 
 Visit our website: [GIQ Project Page](https://toomanymatts.github.io/giq-project-page-test/)
 
-<div align="center">
-  <input type="range" min="1" max="24" value="1" id="slider" style="width: 400px;">
-  <br>
-  <img id="slider-image" src="frames/frame_01.png" width="400"/>
-</div>
-
-<script>
-  const slider = document.getElementById('slider');
-  const img = document.getElementById('slider-image');
-
-  slider.oninput = function() {
-    let frameNumber = this.value.padStart(2, '0');
-    img.src = `frames/frame_${frameNumber}.png`;
-  };
-</script>
 
 
 
